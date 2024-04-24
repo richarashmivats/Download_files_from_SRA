@@ -13,9 +13,7 @@ pwd; hostname; date
 # enable proxy to allow compute node connection to internet
 module load WebProxy
 
-cd /scratch/group/isinghlab/projects/IPA_data/GSE214980_PTCL/rna
+cd $2
 
-conda activate wgbs
-
-/scratch/user/richa.rashmi.1202/tools/sratoolkit.3.0.1-ubuntu64/bin/prefetch $1;
-/scratch/user/richa.rashmi.1202/tools/sratoolkit.3.0.1-ubuntu64/bin/fastq-dump --gzip --split-3 $1; 
+prefetch $1;
+fastq-dump --gzip --split-3 $1; 
